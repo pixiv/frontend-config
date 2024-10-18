@@ -1,6 +1,6 @@
 {
   "name": "@pixiv/eslint-config",
-  "version": "0.0.0-experimental.5",
+  "version": "0.0.1",
   "description": "pixiv's base eslint config",
   "author": "pixiv",
   "publishConfig": {

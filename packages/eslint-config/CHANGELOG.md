@@ -1,5 +1,11 @@
 # @pixiv/eslint-config
 
+## 0.0.1
+
+### Patch Changes
+
+- Release 0.0.1 (version bump only)
+
 ## 0.0.0-experimental.5
 
 ### Patch Changes
