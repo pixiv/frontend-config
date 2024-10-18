@@ -1,0 +1,208 @@
+import { ESLint, Linter } from "eslint";
+import * as compat from "@eslint/compat";
+import tseslint from 'typescript-eslint'
+// @ts-expect-error no official types for this
+import * as eslintrc from "@eslint/eslintrc";
+// @ts-expect-error no official types for this
+import eslintJs from "@eslint/js";
+import pluginTypescriptEslint from "@typescript-eslint/eslint-plugin";
+import tsParser from "@typescript-eslint/parser";
+// @ts-expect-error no official types for this
+import configPrettier from "eslint-config-prettier";
+import pluginReact from "eslint-plugin-react";
+// @ts-expect-error no types for this
+import pluginReactCompiler from "eslint-plugin-react-compiler";
+// @ts-expect-error no types for this
+import pluginReactHooks from "eslint-plugin-react-hooks";
+import globals from "globals";
+// @ts-expect-error no types for this
+import pluginJsxA11y from "eslint-plugin-jsx-a11y";
+// @ts-expect-error no types for this
+import PluginNext from "@next/eslint-plugin-next";
+
+// re-export
+export {
+  eslintrc,
+  eslintJs,
+  globals,
+  compat,
+  tseslint,
+  tsParser,
+  configPrettier,
+  pluginReact,
+  pluginReactCompiler,
+  pluginReactHooks,
+  pluginTypescriptEslint,
+  pluginJsxA11y,
+};
+
+const flatCompat = new eslintrc.FlatCompat();
+
+export const files = () => [
+  {
+    ignores: ["tmp", ".storybook", "storybook-static"],
+    files: ["**/*.{js,mjs,cjs,jsx,ts,tsx}"],
+  },
+] satisfies Linter.Config[];
+
+export const js = () => [
+  // TODO: eslintJs.configs.recommended,
+  {
+    rules: {
+      ...configPrettier.rules,
+      "no-empty-function": "error",
+      curly: "error",
+      "no-fallthrough": "error",
+      "no-constant-condition": "error",
+      "object-shorthand": "error",
+    },
+  },
+] satisfies Linter.Config[];
+
+export const typescript = () => [
+  {
+    plugins: {
+      // @ts-expect-error pluginTypescriptEslint export is not compat with ESLint.Plugin
+      "@typescript-eslint": pluginTypescriptEslint as ESLint.Plugin,
+    },
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+      },
+
+      parser: tsParser,
+      ecmaVersion: 8,
+      sourceType: "module",
+
+      parserOptions: {
+        project: './tsconfig.json',
+        tsconfigRootDir: process.cwd(),
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
+
+    rules: {
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': 'error',
+      "@typescript-eslint/consistent-type-imports": [
+        "error",
+        {
+          disallowTypeAnnotations: false,
+          fixStyle: "inline-type-imports",
+        },
+      ],
+      "@typescript-eslint/no-import-type-side-effects": "error",
+      '@typescript-eslint/no-deprecated': 'warn',
+    },
+  },
+  {
+    files: ['**/*.{mjs,js}'],
+    ...tseslint.configs.disableTypeChecked as Linter.Config,
+  }
+] satisfies Linter.Config[];
+
+export const react = () => [
+  {
+    settings: {
+      react: {
+        version: "detect",
+      },
+    },
+    plugins: {
+      // https://github.com/jsx-eslint/eslint-plugin-react/issues/3838#issuecomment-2395472758
+      react: pluginReact as ESLint.Plugin,
+      "react-hooks": pluginReactHooks,
+      "react-compiler": pluginReactCompiler,
+      'jsx-a11y': pluginJsxA11y,
+    },
+    rules: {
+      ...pluginReact.configs.flat.recommended.rules as Linter.RulesRecord,
+      "react/self-closing-comp": "error",
+      "react/react-in-jsx-scope": "off",
+      "react/jsx-no-target-blank": "off",
+      "react/prop-types": "warn",
+      "react/display-name": "warn",
+      "react/no-unknown-property": [
+        "error",
+        {
+          ignore: ["css"],
+        },
+      ],
+      'react-hooks/rules-of-hooks': 'error',
+      "react-hooks/exhaustive-deps": "error",
+      "react-compiler/react-compiler": "warn",
+
+      // from next config
+
+      // 'jsx-a11y/alt-text': [
+      //   'warn',
+      //   {
+      //     elements: ['img'],
+      //     img: ['Image'],
+      //   },
+      // ],
+      'jsx-a11y/aria-props': 'warn',
+      'jsx-a11y/aria-proptypes': 'warn',
+      'jsx-a11y/aria-unsupported-elements': 'warn',
+      'jsx-a11y/role-has-required-aria-props': 'warn',
+      'jsx-a11y/role-supports-aria-props': 'warn',
+    },
+  },
+] satisfies Linter.Config[];
+
+/**
+ * NOTE: eslint-plugin-nextがv9対応していないが@next/eslint-plugin-nextを利用して回避する
+ */
+export const nextJs = () => {
+  const patchedPluginNext = compat.fixupPluginRules(PluginNext);
+
+  return [
+    // ...compat.fixupConfigRules(
+    //   flatCompat.extends("next/core-web-vitals")
+    // ),
+    {
+      plugins: {
+        "@next/next": patchedPluginNext
+      },
+      rules: {
+        ...(patchedPluginNext.configs as Record<string, Linter.Config<Linter.RulesRecord>>)["core-web-vitals"].rules,
+        '@next/next/no-duplicate-head': 'off',
+        "@next/next/no-img-element": "off",
+      },
+    },
+  ] satisfies Linter.Config[]
+};
+
+export const storybook = () => [
+  ...compat.fixupConfigRules(
+    flatCompat.extends("plugin:storybook/recommended")
+  ),
+];
+
+export const imports = () => [
+  ...compat.fixupConfigRules(flatCompat.extends("plugin:import/recommended")),
+  {
+    rules: {
+      "import/no-duplicates": "error",
+      "import/first": "error",
+      "import/named": "off",
+      "import/export": "off",
+      "import/no-unresolved": "off",
+      "import/namespace": "off",
+      "import/default": "off",
+      "import/no-named-as-default": "off",
+      "import/no-named-as-default-member": "off",
+      "import/order": [
+        "warn",
+        {
+          alphabetize: {
+            order: "asc",
+            orderImportKind: "asc",
+          },
+        },
+      ],
+    },
+  },
+] satisfies Linter.Config[];

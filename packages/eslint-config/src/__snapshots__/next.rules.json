@@ -1,0 +1,82 @@
+{
+  "curly": "error",
+  "no-empty-function": "error",
+  "no-fallthrough": "error",
+  "no-constant-condition": "error",
+  "object-shorthand": "error",
+  "@typescript-eslint/no-unused-vars": "error",
+  "@typescript-eslint/consistent-type-imports": [
+    "error",
+    {
+      "disallowTypeAnnotations": false,
+      "fixStyle": "inline-type-imports"
+    }
+  ],
+  "@typescript-eslint/no-import-type-side-effects": "error",
+  "@typescript-eslint/no-deprecated": "warn",
+  "react/display-name": "warn",
+  "react/jsx-key": 2,
+  "react/jsx-no-comment-textnodes": 2,
+  "react/jsx-no-duplicate-props": 2,
+  "react/jsx-no-undef": 2,
+  "react/jsx-uses-react": 2,
+  "react/jsx-uses-vars": 2,
+  "react/no-children-prop": 2,
+  "react/no-danger-with-children": 2,
+  "react/no-deprecated": 2,
+  "react/no-direct-mutation-state": 2,
+  "react/no-find-dom-node": 2,
+  "react/no-is-mounted": 2,
+  "react/no-render-return-value": 2,
+  "react/no-string-refs": 2,
+  "react/no-unescaped-entities": 2,
+  "react/no-unknown-property": [
+    "error",
+    {
+      "ignore": [
+        "css"
+      ]
+    }
+  ],
+  "react/prop-types": "warn",
+  "react/require-render-return": 2,
+  "react/self-closing-comp": "error",
+  "react-hooks/rules-of-hooks": "error",
+  "react-hooks/exhaustive-deps": "error",
+  "react-compiler/react-compiler": "warn",
+  "jsx-a11y/aria-props": "warn",
+  "jsx-a11y/aria-proptypes": "warn",
+  "jsx-a11y/aria-unsupported-elements": "warn",
+  "jsx-a11y/role-has-required-aria-props": "warn",
+  "jsx-a11y/role-supports-aria-props": "warn",
+  "@next/next/no-html-link-for-pages": "error",
+  "@next/next/no-sync-scripts": "error",
+  "storybook/await-interactions": "error",
+  "storybook/context-in-play-function": "error",
+  "storybook/default-exports": "error",
+  "storybook/hierarchy-separator": "warn",
+  "storybook/no-redundant-story-name": "warn",
+  "storybook/prefer-pascal-case": "warn",
+  "storybook/story-exports": "error",
+  "storybook/use-storybook-expect": "error",
+  "storybook/use-storybook-testing-library": "error",
+  "storybook/no-uninstalled-addons": "error",
+  "import/no-unresolved": "error",
+  "import/named": "error",
+  "import/namespace": "error",
+  "import/default": "error",
+  "import/export": "error",
+  "import/no-named-as-default": "warn",
+  "import/no-named-as-default-member": "warn",
+  "import/no-duplicates": "error",
+  "import/first": "error",
+  "import/order": [
+    "warn",
+    {
+      "alphabetize": {
+        "order": "asc",
+        "orderImportKind": "asc"
+      }
+    }
+  ]
+}

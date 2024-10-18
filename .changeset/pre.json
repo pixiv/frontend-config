@@ -1,0 +1,15 @@
+{
+  "mode": "pre",
+  "tag": "experimental",
+  "initialVersions": {
+    "@pixiv/eslint-config": "0.0.0-experimental-0"
+  },
+  "changesets": [
+    "metal-trains-dress",
+    "moody-bananas-argue",
+    "odd-flowers-design",
+    "short-pugs-return",
+    "sixty-toys-learn",
+    "weak-papayas-call"
+  ]
+}

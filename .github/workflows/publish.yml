@@ -1,0 +1,31 @@
+name: Publish Package to npmjs
+
+on:
+  release:
+    types: [created]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          cache: pnpm
+          node-version: '20.x'
+          registry-url: 'https://registry.npmjs.org'
+      - name: publish
+        run: |
+          pnpm install
+          pnpm -r build
+          pnpm -r publish --access public --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true

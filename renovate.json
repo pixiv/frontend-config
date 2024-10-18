@@ -1,0 +1,66 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": ["config:base", ":disableDependencyDashboard"],
+    "platform": "gitlab",
+    "repositories": ["pixiv/frontend-config"],
+    "timezone": "Asia/Tokyo",
+    "enabledManagers": ["npm"],
+    "fetchReleaseNotes": "off",
+    "prHourlyLimit": 0,
+    "prConcurrentLimit": 0,
+    "platformAutomerge": true,
+    "npm":{
+      "fileMatch": [
+        "^package\\.json$"
+      ]
+    },
+    "lockFileMaintenance": {
+      "enabled": true
+    },
+    "rangeStrategy": "pin",
+    "ignoreDeps": [
+        "pnpm",
+        "eslint"
+      ],
+    "pin": {
+      "labels": ["dependencies", "pin"]
+    },
+    "patch": {
+      "labels": ["dependencies", "patch"]
+    },
+    "minor": {
+      "labels": ["dependencies", "minor"]
+    },
+    "major": {
+      "labels": ["dependencies", "major"]
+    },
+    "minimumReleaseAge": "1 week",
+    "packageRules": [
+      {
+        "groupName": "pin dependencies",
+        "description": "packageのpinでまとめる",
+        "matchUpdateTypes": ["pin"]
+      },
+      {
+        "groupName": "patch dependencies",
+        "description": "patchのアップデートはまとめる",
+        "matchUpdateTypes": ["patch"]
+      },
+      {
+        "groupName": "minor dependencies",
+        "description": "minorのアップデートはまとめる",
+        "matchUpdateTypes": ["minor"]
+      },
+      {
+        "groupName": "dependencies",
+        "matchDepTypes": ["dependencies"]
+      },
+      {
+        "groupName": "devDependencies",
+        "matchDepTypes": ["devDependencies"]
+      }
+    ],
+    "baseBranches": ["main"],
+    "assignees": ["yue4u"],
+    "onboarding": false
+  }
