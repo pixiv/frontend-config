@@ -4,7 +4,12 @@
   "no-fallthrough": "error",
   "no-constant-condition": "error",
   "object-shorthand": "error",
-  "@typescript-eslint/no-unused-vars": "error",
+  "@typescript-eslint/no-unused-vars": [
+    "error",
+    {
+      "argsIgnorePattern": "^_"
+    }
+  ],
   "@typescript-eslint/consistent-type-imports": [
     "error",
     {
@@ -38,9 +43,12 @@
       ]
     }
   ],
-  "react/prop-types": "warn",
   "react/require-render-return": 2,
   "react/self-closing-comp": "error",
+  "react/jsx-boolean-value": [
+    "error",
+    "never"
+  ],
   "react-hooks/rules-of-hooks": "error",
   "react-hooks/exhaustive-deps": "error",
   "react-compiler/react-compiler": "warn",
