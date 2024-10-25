@@ -85,7 +85,12 @@ export const typescript = () => [
 
     rules: {
       'no-unused-vars': 'off',
-      '@typescript-eslint/no-unused-vars': 'error',
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_',
+        },
+      ],
       "@typescript-eslint/consistent-type-imports": [
         "error",
         {
@@ -122,7 +127,8 @@ export const react = () => [
       "react/self-closing-comp": "error",
       "react/react-in-jsx-scope": "off",
       "react/jsx-no-target-blank": "off",
-      "react/prop-types": "warn",
+      'react/prop-types': 'off',
+      "react/jsx-boolean-value": ["error", "never"],
       "react/display-name": "warn",
       "react/no-unknown-property": [
         "error",
