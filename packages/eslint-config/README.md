@@ -1,5 +1,8 @@
 # @pixiv/eslint-config
 
+> [!WARNING]
+> This package does not follow semver before 1.0
+
 `pnpm add eslint @pixiv/eslint-config`
 
 eslint.config.mjs

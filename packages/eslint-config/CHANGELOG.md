@@ -1,5 +1,11 @@
 # @pixiv/eslint-config
 
+## 0.0.2
+
+### Patch Changes
+
+- [Bump deps](https://github.com/pixiv/frontend-config/pull/3) to support TypeScript 5.6 and [update eslint rules](https://github.com/pixiv/frontend-config/pull/4)
+
 ## 0.0.1
 
 ### Patch Changes
