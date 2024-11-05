@@ -165,18 +165,14 @@ export const react = () => [
  * NOTE: eslint-plugin-nextのリリースが頻繁ではないので@next/eslint-plugin-nextを利用して回避する
  */
 export const nextJs = () => {
-  const patchedPluginNext = compat.fixupPluginRules(pluginNext);
 
   return [
-    // ...compat.fixupConfigRules(
-    //   flatCompat.extends("next/core-web-vitals")
-    // ),
     {
       plugins: {
-        "@next/next": patchedPluginNext
+        "@next/next": pluginNext
       },
       rules: {
-        ...(patchedPluginNext.configs as Record<string, Linter.Config<Linter.RulesRecord>>)["core-web-vitals"].rules,
+        ...(pluginNext.configs as Record<string, Linter.Config<Linter.RulesRecord>>)["core-web-vitals"].rules,
         '@next/next/no-duplicate-head': 'off',
         "@next/next/no-img-element": "off",
       },
