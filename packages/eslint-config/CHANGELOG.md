@@ -1,5 +1,11 @@
 # @pixiv/eslint-config
 
+## 0.0.3
+
+### Patch Changes
+
+- Bump dependencies and [add varsIgnorePattern to @typescript-eslint/no-unused-vars](https://github.com/pixiv/frontend-config/pull/11)
+
 ## 0.0.2
 
 ### Patch Changes
