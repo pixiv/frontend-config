@@ -96,6 +96,7 @@ export const typescript = () => [
         'error',
         {
           argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
         },
       ],
       "@typescript-eslint/consistent-type-imports": [
@@ -147,7 +148,7 @@ export const react = () => [
       "react-hooks/exhaustive-deps": "error",
       "react-compiler/react-compiler": "warn",
 
-      // from next config
+      // from next config, comment below is used to track diff
 
       // 'jsx-a11y/alt-text': [
       //   'warn',
