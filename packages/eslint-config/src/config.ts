@@ -18,7 +18,8 @@ import globals from "globals";
 // @ts-expect-error no types for this
 import pluginJsxA11y from "eslint-plugin-jsx-a11y";
 // @ts-expect-error no types for this
-import PluginNext from "@next/eslint-plugin-next";
+import pluginNext from "@next/eslint-plugin-next";
+import pluginStorybook from 'eslint-plugin-storybook'
 
 // re-export
 export {
@@ -34,6 +35,8 @@ export {
   pluginReactHooks,
   pluginTypescriptEslint,
   pluginJsxA11y,
+  pluginNext,
+  pluginStorybook,
 };
 
 const flatCompat = new eslintrc.FlatCompat();
@@ -123,7 +126,7 @@ export const react = () => [
       'jsx-a11y': pluginJsxA11y,
     },
     rules: {
-      ...pluginReact.configs.flat.recommended.rules as Linter.RulesRecord,
+      ...pluginReact.configs.flat!.recommended.rules as Linter.RulesRecord,
       "react/self-closing-comp": "error",
       "react/react-in-jsx-scope": "off",
       "react/jsx-no-target-blank": "off",
@@ -159,10 +162,10 @@ export const react = () => [
 ] satisfies Linter.Config[];
 
 /**
- * NOTE: eslint-plugin-nextがv9対応していないが@next/eslint-plugin-nextを利用して回避する
+ * NOTE: eslint-plugin-nextのリリースが頻繁ではないので@next/eslint-plugin-nextを利用して回避する
  */
 export const nextJs = () => {
-  const patchedPluginNext = compat.fixupPluginRules(PluginNext);
+  const patchedPluginNext = compat.fixupPluginRules(pluginNext);
 
   return [
     // ...compat.fixupConfigRules(
@@ -182,9 +185,7 @@ export const nextJs = () => {
 };
 
 export const storybook = () => [
-  ...compat.fixupConfigRules(
-    flatCompat.extends("plugin:storybook/recommended")
-  ),
+  ...pluginStorybook.configs['flat/recommended'],
 ];
 
 export const imports = () => [
