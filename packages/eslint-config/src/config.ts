@@ -20,6 +20,8 @@ import pluginJsxA11y from "eslint-plugin-jsx-a11y";
 // @ts-expect-error no types for this
 import pluginNext from "@next/eslint-plugin-next";
 import pluginStorybook from 'eslint-plugin-storybook'
+// @ts-expect-error no types for this
+import pluginImport from 'eslint-plugin-import'
 
 // re-export
 export {
@@ -37,9 +39,11 @@ export {
   pluginJsxA11y,
   pluginNext,
   pluginStorybook,
+  pluginImport
 };
 
-const flatCompat = new eslintrc.FlatCompat();
+// No longer required but keep for a while just in case we are adding new plugins.
+// const flatCompat = new eslintrc.FlatCompat();
 
 export const files = () => [
   {
@@ -185,7 +189,7 @@ export const storybook = () => [
 ];
 
 export const imports = () => [
-  ...compat.fixupConfigRules(flatCompat.extends("plugin:import/recommended")),
+  pluginImport.flatConfigs.recommended,
   {
     rules: {
       "import/no-duplicates": "error",
