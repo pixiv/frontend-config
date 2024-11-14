@@ -35,19 +35,19 @@
   "dependencies": {
     "@eslint/compat": "1.2.2",
     "@eslint/eslintrc": "3.1.0",
-    "@eslint/js": "9.13.0",
-    "@next/eslint-plugin-next": "15.0.1",
-    "@typescript-eslint/eslint-plugin": "8.12.1",
-    "@typescript-eslint/parser": "8.12.1",
+    "@eslint/js": "9.14.0",
+    "@next/eslint-plugin-next": "15.0.3",
+    "@typescript-eslint/eslint-plugin": "8.13.0",
+    "@typescript-eslint/parser": "8.13.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-import": "2.31.0",
     "eslint-plugin-jsx-a11y": "6.10.2",
     "eslint-plugin-react": "7.37.2",
-    "eslint-plugin-react-compiler": "0.0.0-experimental-fa06e2c-20241016",
+    "eslint-plugin-react-compiler": "0.0.0-experimental-fcabbc1-20241106",
     "eslint-plugin-react-hooks": "5.0.0",
     "eslint-plugin-storybook": "0.11.0",
-    "globals": "15.11.0",
-    "typescript-eslint": "8.12.1"
+    "globals": "15.12.0",
+    "typescript-eslint": "8.13.0"
   },
   "devDependencies": {
     "tsup": "8.3.5"
