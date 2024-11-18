@@ -1,5 +1,13 @@
 # @pixiv/eslint-config
 
+## 0.0.4
+
+### Patch Changes
+
+- Bump dependencies and update `eslint-plugin-react-compiler` to beta
+- Enforce eslint and prettier for self dev
+- Expose `vanillaTs` config
+
 ## 0.0.3
 
 ### Patch Changes
