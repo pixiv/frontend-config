@@ -3,7 +3,6 @@ import * as compat from "@eslint/compat";
 import tseslint from 'typescript-eslint'
 // @ts-expect-error no official types for this
 import * as eslintrc from "@eslint/eslintrc";
-// @ts-expect-error no official types for this
 import eslintJs from "@eslint/js";
 import pluginTypescriptEslint from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
