@@ -1,7 +1,15 @@
 import type { Linter } from "eslint";
 
 // TODO: optional peer depsに移動してinstallサイズを減らす
-import { files, js, typescript, react, nextJs, storybook, imports } from "./config";
+import {
+  files,
+  js,
+  typescript,
+  react,
+  nextJs,
+  storybook,
+  imports,
+} from "./config";
 
 export * from "./config";
 

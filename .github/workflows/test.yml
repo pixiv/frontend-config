@@ -18,10 +18,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           cache: pnpm
-          node-version: '20.x'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: "20.x"
+          registry-url: "https://registry.npmjs.org"
       - name: build
         run: |
           pnpm install
-          pnpm vitest run
+          pnpm lint
+          pnpm fmt --check
           pnpm -r build

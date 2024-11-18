@@ -8,7 +8,7 @@
 eslint.config.mjs
 
 ```js
-import pixiv from '@pixiv/eslint-config';
+import pixiv from "@pixiv/eslint-config";
 
 export default pixiv.configs.recommended;
 ```
@@ -16,19 +16,19 @@ export default pixiv.configs.recommended;
 また
 
 ```js
-import pixiv from '@pixiv/eslint-config';
+import pixiv from "@pixiv/eslint-config";
 
 export default [
   {
-    ignores: ['tmp', 'vendor', 'public/packs'],
+    ignores: ["tmp", "vendor", "public/packs"],
   },
   ...pixiv.configs.recommended,
   {
     rules: {
-      'react/self-closing-comp': 'warn',
-      'import/first': 'warn',
-      'object-shorthand': 'warn',
-      curly: 'off',
+      "react/self-closing-comp": "warn",
+      "import/first": "warn",
+      "object-shorthand": "warn",
+      curly: "off",
     },
   },
 ];
