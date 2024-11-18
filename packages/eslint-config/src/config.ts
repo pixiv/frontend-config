@@ -1,26 +1,26 @@
-import { ESLint, Linter } from "eslint";
 import * as compat from "@eslint/compat";
-import tseslint from 'typescript-eslint'
 // @ts-expect-error no official types for this
 import * as eslintrc from "@eslint/eslintrc";
 import eslintJs from "@eslint/js";
+// @ts-expect-error no types for this
+import pluginNext from "@next/eslint-plugin-next";
 import pluginTypescriptEslint from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
-// @ts-expect-error no official types for this
+import type { ESLint, Linter } from "eslint";
+// @ts-expect-error no types for this
 import configPrettier from "eslint-config-prettier";
+// @ts-expect-error no types for this
+import pluginImport from 'eslint-plugin-import'
+// @ts-expect-error no types for this
+import pluginJsxA11y from "eslint-plugin-jsx-a11y";
 import pluginReact from "eslint-plugin-react";
 // @ts-expect-error no types for this
 import pluginReactCompiler from "eslint-plugin-react-compiler";
 // @ts-expect-error no types for this
 import pluginReactHooks from "eslint-plugin-react-hooks";
-import globals from "globals";
-// @ts-expect-error no types for this
-import pluginJsxA11y from "eslint-plugin-jsx-a11y";
-// @ts-expect-error no types for this
-import pluginNext from "@next/eslint-plugin-next";
 import pluginStorybook from 'eslint-plugin-storybook'
-// @ts-expect-error no types for this
-import pluginImport from 'eslint-plugin-import'
+import globals from "globals";
+import tseslint from 'typescript-eslint'
 
 // re-export
 export {
@@ -46,7 +46,7 @@ export {
 
 export const files = () => [
   {
-    ignores: ["tmp", ".storybook", "storybook-static"],
+    ignores: ["tmp", "dist", ".storybook", "storybook-static"],
     files: ["**/*.{js,mjs,cjs,jsx,ts,tsx}"],
   },
 ] satisfies Linter.Config[];
