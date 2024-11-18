@@ -9,11 +9,15 @@
   "engines": {
     "pnpm": ">= 9"
   },
+  "scripts": {
+    "lint": "eslint --flag unstable_ts_config"
+  },
   "devDependencies": {
-    "eslint": "9.11.1",
     "@babel/preset-typescript": "7.26.0",
     "@changesets/cli": "2.27.9",
     "@types/node": "22.9.0",
+    "eslint": "9.11.1",
+    "jiti": "^2.4.0",
     "typescript": "5.6.3",
     "vitest": "2.1.4"
   },

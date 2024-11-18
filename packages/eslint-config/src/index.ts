@@ -8,6 +8,19 @@ export * from "./config";
 export default {
   configs: {
     /**
+     * フレームワーク使用しない場合
+     *
+     * 内容: files + js + typescript
+     */
+    get vanillaTs() {
+      return [
+        ...files(),
+        ...js(),
+        ...typescript(),
+        ...imports(),
+      ] satisfies Linter.Config[];
+    },
+    /**
      * できるだけそのまま使いたい場合
      *
      * 内容: files + js + typescript + react + storybook + imports
