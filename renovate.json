@@ -1,7 +1,7 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": ["config:base", ":disableDependencyDashboard"],
-    "platform": "gitlab",
+    "platform": "github",
     "repositories": ["pixiv/frontend-config"],
     "timezone": "Asia/Tokyo",
     "enabledManagers": ["npm"],
@@ -15,12 +15,11 @@
       ]
     },
     "lockFileMaintenance": {
-      "enabled": true
+      "enabled": false
     },
     "rangeStrategy": "pin",
     "ignoreDeps": [
-        "pnpm",
-        "eslint"
+        "pnpm"
       ],
     "pin": {
       "labels": ["dependencies", "pin"]
