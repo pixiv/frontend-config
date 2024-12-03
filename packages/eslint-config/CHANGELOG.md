@@ -1,5 +1,11 @@
 # @pixiv/eslint-config
 
+## 0.0.5
+
+### Patch Changes
+
+- Bump dependencies and [support TypeScript 5.7](https://github.com/typescript-eslint/typescript-eslint/releases/tag/v8.16.0)
+
 ## 0.0.4
 
 ### Patch Changes
