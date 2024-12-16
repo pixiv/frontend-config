@@ -36,6 +36,10 @@
     "minimumReleaseAge": "1 week",
     "packageRules": [
       {
+        "depTypeList": ["peerDependencies"],
+        "enabled": false
+      },
+      {
         "groupName": "pin dependencies",
         "description": "packageのpinでまとめる",
         "matchUpdateTypes": ["pin"]
