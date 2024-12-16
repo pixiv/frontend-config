@@ -1,5 +1,11 @@
 # @pixiv/eslint-config
 
+## 0.0.6
+
+### Patch Changes
+
+- [Bump dependencies](https://github.com/pixiv/frontend-config/pull/32)
+
 ## 0.0.5
 
 ### Patch Changes
