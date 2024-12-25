@@ -15,15 +15,15 @@
   },
   "devDependencies": {
     "@babel/preset-typescript": "7.26.0",
-    "@changesets/cli": "2.27.10",
-    "@types/node": "22.10.1",
-    "eslint": "9.16.0",
-    "jiti": "2.4.1",
+    "@changesets/cli": "2.27.11",
+    "@types/node": "22.10.2",
+    "eslint": "9.17.0",
+    "jiti": "2.4.2",
     "prettier": "3.4.2",
     "typescript": "5.7.2",
     "vitest": "2.1.8"
   },
   "resolutions": {
-    "eslint": "9.16.0"
+    "eslint": "9.17.0"
   }
 }
