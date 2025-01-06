@@ -33,10 +33,11 @@ jobs:
       - name: version
         run: |
           RELEASE_TYPE=${{ github.event.inputs.release_type }}
-          echo "---\n\"@pixiv/eslint-config\": $RELEASE_TYPE\n---" > .changeset/$RELEASE_TYPE.md
+          echo -e "---\n\"@pixiv/eslint-config\": $RELEASE_TYPE\n---" > .changeset/$RELEASE_TYPE.md
           pnpm install
           pnpm changeset version
           git config --local user.email "action@github.com"
           git config --local user.name "actions-user"
+          git add .
           git commit -m 'feat: bump versions'
           git push origin ${{ github.ref_name }}
