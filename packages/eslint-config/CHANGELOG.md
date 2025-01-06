@@ -4,7 +4,10 @@
 
 ### Patch Changes
 
--
+- (35d4a33) chore(deps): update devdependencies
+- (79cdeb1) fix(deps): update dependencies
+- (8931f60) feat: try add version workflow
+- (586b632) chore(deps): pin dependency @changesets/changelog-github to 0.5.0
 
 ## 0.0.6
 

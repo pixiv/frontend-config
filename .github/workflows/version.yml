@@ -32,8 +32,10 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - name: version
         run: |
+          LATEST_TAG=$(git describe --tags --abbrev=0)
           RELEASE_TYPE=${{ github.event.inputs.release_type }}
-          echo -e "---\n\"@pixiv/eslint-config\": $RELEASE_TYPE\n---" > .changeset/$RELEASE_TYPE.md
+          MESSAGES=$(git log $LATEST_TAG..HEAD --reverse --merges --grep='Merge pull request #' --pretty='format:- (%h) %b')
+          echo -e "---\n\"@pixiv/eslint-config\": $RELEASE_TYPE\n---\n\n$MESSAGES" > .changeset/$RELEASE_TYPE.md
           pnpm install
           pnpm changeset version
           git config --local user.email "action@github.com"
