@@ -1,0 +1,41 @@
+name: Version packages
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_type:
+        description: "Release type"
+        required: true
+        default: "patch"
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          cache: pnpm
+          node-version: "20.x"
+          registry-url: "https://registry.npmjs.org"
+      - name: version
+        run: |
+          RELEASE_TYPE=${{ github.event.inputs.release_type }}
+          echo "---\n\"@pixiv/eslint-config\": $RELEASE_TYPE\n---" > .changeset/$RELEASE_TYPE.md
+          pnpm changeset version
+          git config --local user.email "action@github.com"
+          git config --local user.name "actions-user"
+          git commit -m 'feat: bump versions'
+          git push origin ${{ github.ref_name }}
