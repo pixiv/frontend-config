@@ -10,7 +10,7 @@
     "pnpm": ">= 9"
   },
   "scripts": {
-    "lint": "eslint --flag unstable_ts_config",
+    "lint": "eslint",
     "fmt": "prettier .github packages"
   },
   "devDependencies": {
