@@ -32,6 +32,7 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - name: version
         run: |
+          git fetch --tags
           LATEST_TAG=$(git describe --tags --abbrev=0)
           RELEASE_TYPE=${{ github.event.inputs.release_type }}
           MESSAGES=$(git log $LATEST_TAG..HEAD --reverse --merges --grep='Merge pull request #' --pretty='format:- (%h) %b')
