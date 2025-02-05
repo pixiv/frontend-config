@@ -4,10 +4,10 @@
 
 ### Patch Changes
 
-- - (6139c62) chore(deps): update dependency eslint to v9.19.0
-  - (6004363) chore(deps): update devdependencies
-  - (7356809) fix(deps): update dependency eslint-config-prettier to v10
-  - (bfceb6a) fix(deps): update dependencies
+- ([6139c62](https://github.com/pixiv/frontend-config/commit/6139c62)) chore(deps): update dependency eslint to v9.19.0
+- ([6004363](https://github.com/pixiv/frontend-config/commit/6004363)) chore(deps): update devdependencies
+- ([7356809](https://github.com/pixiv/frontend-config/commit/7356809)) fix(deps): update dependency eslint-config-prettier to v10
+- ([bfceb6a](https://github.com/pixiv/frontend-config/commit/bfceb6a)) fix(deps): update dependencies
 
 ## 0.0.8
 
