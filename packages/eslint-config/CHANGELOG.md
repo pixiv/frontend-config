@@ -1,5 +1,14 @@
 # @pixiv/eslint-config
 
+## 0.0.9
+
+### Patch Changes
+
+- - (6139c62) chore(deps): update dependency eslint to v9.19.0
+  - (6004363) chore(deps): update devdependencies
+  - (7356809) fix(deps): update dependency eslint-config-prettier to v10
+  - (bfceb6a) fix(deps): update dependencies
+
 ## 0.0.8
 
 ### Patch Changes
