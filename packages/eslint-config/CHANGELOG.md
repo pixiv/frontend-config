@@ -1,5 +1,13 @@
 # @pixiv/eslint-config
 
+## 0.0.10
+
+### Patch Changes
+
+- ([3c89b1d](https://github.com/pixiv/frontend-config/commit/3c89b1dac641d3b17773f1c0edec7ddf83c9fe17)) chore(deps): update dependency eslint to v9.20.0
+- ([f723850](https://github.com/pixiv/frontend-config/commit/f72385053e07ae21050e6ec64d8975eb0af9c692)) chore(deps): update devdependencies
+- ([ab8d3f4](https://github.com/pixiv/frontend-config/commit/ab8d3f46d40350955a73e81bf8a5db92e57871dc)) fix(deps): update dependencies
+
 ## 0.0.9
 
 ### Patch Changes
