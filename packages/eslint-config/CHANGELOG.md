@@ -1,5 +1,13 @@
 # @pixiv/eslint-config
 
+## 0.0.11
+
+### Patch Changes
+
+- ([679c4e0](https://github.com/pixiv/frontend-config/commit/679c4e0)) chore(deps): update devdependencies
+- ([e108b32](https://github.com/pixiv/frontend-config/commit/e108b32)) fix(deps): update dependency globals to v16
+- ([745286c](https://github.com/pixiv/frontend-config/commit/745286c)) fix(deps): update dependencies
+
 ## 0.0.10
 
 ### Patch Changes
