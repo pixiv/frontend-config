@@ -1,5 +1,4 @@
 import * as compat from "@eslint/compat";
-// @ts-expect-error no official types for this
 import * as eslintrc from "@eslint/eslintrc";
 import eslintJs from "@eslint/js";
 // @ts-expect-error no types for this
