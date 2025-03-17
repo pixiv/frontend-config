@@ -1,5 +1,11 @@
 # @pixiv/eslint-config
 
+## 0.0.12
+
+### Patch Changes
+
+- [changelog](https://github.com/pixiv/frontend-config/releases)
+
 ## 0.0.11
 
 ### Patch Changes
