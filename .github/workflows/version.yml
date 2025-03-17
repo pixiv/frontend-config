@@ -32,6 +32,7 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - name: version
         run: |
+          RELEASE_TYPE=${{ github.event.inputs.release_type }}
           echo -e "---\n\"@pixiv/eslint-config\": $RELEASE_TYPE\n---\n\n[changelog](https://github.com/pixiv/frontend-config/releases)" > .changeset/$RELEASE_TYPE.md
           pnpm install
           pnpm changeset version
