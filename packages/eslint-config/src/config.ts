@@ -12,7 +12,6 @@ import pluginImport from "eslint-plugin-import";
 // @ts-expect-error no types for this
 import pluginJsxA11y from "eslint-plugin-jsx-a11y";
 import pluginReact from "eslint-plugin-react";
-// @ts-expect-error no types for this
 import pluginReactCompiler from "eslint-plugin-react-compiler";
 import pluginReactHooks from "eslint-plugin-react-hooks";
 import pluginStorybook from "eslint-plugin-storybook";
