@@ -17,12 +17,12 @@
     "@babel/preset-typescript": "7.27.1",
     "@changesets/changelog-github": "0.5.1",
     "@changesets/cli": "2.29.4",
-    "@types/node": "22.15.29",
-    "eslint": "9.28.0",
+    "@types/node": "22.15.31",
+    "eslint": "9.29.0",
     "jiti": "2.4.2",
     "prettier": "3.5.3",
     "typescript": "5.8.3",
-    "vitest": "3.2.1"
+    "vitest": "3.2.3"
   },
   "resolutions": {
     "eslint": "9.29.0"
