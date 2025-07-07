@@ -7,7 +7,6 @@ import pluginTypescriptEslint from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
 import type { ESLint, Linter } from "eslint";
 import configPrettier from "eslint-config-prettier/flat";
-// @ts-expect-error no types for this
 import pluginImport from "eslint-plugin-import";
 // @ts-expect-error no types for this
 import pluginJsxA11y from "eslint-plugin-jsx-a11y";
