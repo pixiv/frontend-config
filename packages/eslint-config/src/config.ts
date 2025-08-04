@@ -1,7 +1,6 @@
 import * as compat from "@eslint/compat";
 import * as eslintrc from "@eslint/eslintrc";
 import eslintJs from "@eslint/js";
-// @ts-expect-error no types for this
 import pluginNext from "@next/eslint-plugin-next";
 import pluginTypescriptEslint from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
@@ -174,17 +173,12 @@ export const nextJs = () => {
         "@next/next": pluginNext,
       },
       rules: {
-        ...(
-          pluginNext.configs as Record<
-            string,
-            Linter.Config<Linter.RulesRecord>
-          >
-        )["core-web-vitals"].rules,
+        ...pluginNext.configs["core-web-vitals"].rules,
         "@next/next/no-duplicate-head": "off",
         "@next/next/no-img-element": "off",
       },
     },
-  ] satisfies Linter.Config[];
+  ] as Linter.Config[];
 };
 
 export const storybook = () => [...pluginStorybook.configs["flat/recommended"]];
