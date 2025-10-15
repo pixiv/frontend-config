@@ -16,7 +16,7 @@
     "enabled": false
   },
   "rangeStrategy": "pin",
-  "ignoreDeps": ["pnpm"],
+  "ignoreDeps": ["pnpm", "eslint-plugin-storybook"],
   "pin": {
     "labels": ["dependencies", "pin"]
   },
