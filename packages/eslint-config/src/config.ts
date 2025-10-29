@@ -112,7 +112,7 @@ export const typescript = (): Linter.Config[] =>
     },
   ] satisfies Linter.Config[];
 
-export const react = () =>
+export const react = (): Linter.Config[] =>
   [
     {
       settings: {
