@@ -61,7 +61,7 @@ export const js = () =>
     },
   ] satisfies Linter.Config[];
 
-export const typescript = () =>
+export const typescript = (): Linter.Config[] =>
   [
     {
       plugins: {
@@ -183,7 +183,7 @@ export const nextJs = () => {
 
 export const storybook = () => [...pluginStorybook.configs["flat/recommended"]];
 
-export const imports = () =>
+export const imports = (): Linter.Config[] =>
   [
     pluginImport.flatConfigs.recommended,
     {

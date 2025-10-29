@@ -20,7 +20,7 @@ export default {
      *
      * 内容: files + js + typescript
      */
-    get vanillaTs() {
+    get vanillaTs(): Linter.Config[] {
       return [
         ...files(),
         ...js(),
@@ -33,7 +33,7 @@ export default {
      *
      * 内容: files + js + typescript + react + storybook + imports
      */
-    get recommended() {
+    get recommended(): Linter.Config[] {
       return [
         ...files(),
         ...js(),
@@ -47,7 +47,7 @@ export default {
     /**
      * 内容: js + typescript + react
      */
-    get react() {
+    get react(): Linter.Config[] {
       return [
         ...js(), //
         ...typescript(),
@@ -61,7 +61,7 @@ export default {
      * NOTE:
      * 1. 中身はeslint-config-nextではなく @next/eslint-plugin-next
      */
-    get nextJs() {
+    get nextJs(): Linter.Config[] {
       return [
         ...js(),
         ...typescript(),
