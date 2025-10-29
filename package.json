@@ -18,7 +18,7 @@
     "@changesets/changelog-github": "0.5.1",
     "@changesets/cli": "2.29.7",
     "@types/node": "24.9.1",
-    "eslint": "9.37.0",
+    "eslint": "9.38.0",
     "jiti": "2.6.1",
     "prettier": "3.6.2",
     "typescript": "5.9.3",
