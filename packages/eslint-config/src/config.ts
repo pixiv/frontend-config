@@ -123,7 +123,7 @@ export const react = (): Linter.Config[] =>
       plugins: {
         // https://github.com/jsx-eslint/eslint-plugin-react/issues/3838#issuecomment-2395472758
         react: pluginReact as ESLint.Plugin,
-        "react-hooks": pluginReactHooks,
+        "react-hooks": pluginReactHooks as ESLint.Plugin,
         "react-compiler": pluginReactCompiler,
         "jsx-a11y": pluginJsxA11y,
       },
