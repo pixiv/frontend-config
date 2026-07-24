@@ -189,16 +189,16 @@ export const imports = (): Linter.Config[] =>
     pluginImport.flatConfigs.recommended,
     {
       rules: {
-        "import/no-duplicates": "error",
-        "import/first": "error",
-        "import/named": "off",
-        "import/export": "off",
-        "import/no-unresolved": "off",
-        "import/namespace": "off",
-        "import/default": "off",
-        "import/no-named-as-default": "off",
-        "import/no-named-as-default-member": "off",
-        "import/order": [
+        "import-x/no-duplicates": "error",
+        "import-x/first": "error",
+        "import-x/named": "off",
+        "import-x/export": "off",
+        "import-x/no-unresolved": "off",
+        "import-x/namespace": "off",
+        "import-x/default": "off",
+        "import-x/no-named-as-default": "off",
+        "import-x/no-named-as-default-member": "off",
+        "import-x/order": [
           "warn",
           {
             alphabetize: {

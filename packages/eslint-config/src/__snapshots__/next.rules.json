@@ -93,10 +93,9 @@
   "import-x/export": "error",
   "import-x/no-named-as-default": "warn",
   "import-x/no-named-as-default-member": "warn",
-  "import-x/no-duplicates": "warn",
-  "import/no-duplicates": "error",
-  "import/first": "error",
-  "import/order": [
+  "import-x/no-duplicates": "error",
+  "import-x/first": "error",
+  "import-x/order": [
     "warn",
     {
       "alphabetize": {
