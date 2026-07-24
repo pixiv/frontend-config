@@ -182,7 +182,9 @@ export const nextJs = () => {
   ] as Linter.Config[];
 };
 
-export const storybook = () => [...pluginStorybook.configs["flat/recommended"]];
+export const storybook = (): Linter.Config[] => [
+  ...pluginStorybook.configs["flat/recommended"],
+];
 
 export const imports = (): Linter.Config[] =>
   [
