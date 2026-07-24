@@ -6,7 +6,7 @@ import pluginTypescriptEslint from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
 import type { ESLint, Linter } from "eslint";
 import configPrettier from "eslint-config-prettier/flat";
-import pluginImport from "eslint-plugin-import";
+import pluginImport from "eslint-plugin-import-x";
 // @ts-expect-error no types for this
 import pluginJsxA11y from "eslint-plugin-jsx-a11y";
 import pluginReact from "eslint-plugin-react";
@@ -176,6 +176,7 @@ export const nextJs = () => {
         ...pluginNext.configs["core-web-vitals"].rules,
         "@next/next/no-duplicate-head": "off",
         "@next/next/no-img-element": "off",
+        "@next/next/next-script-for-ga": "off",
       },
     },
   ] as Linter.Config[];
@@ -188,16 +189,16 @@ export const imports = (): Linter.Config[] =>
     pluginImport.flatConfigs.recommended,
     {
       rules: {
-        "import/no-duplicates": "error",
-        "import/first": "error",
-        "import/named": "off",
-        "import/export": "off",
-        "import/no-unresolved": "off",
-        "import/namespace": "off",
-        "import/default": "off",
-        "import/no-named-as-default": "off",
-        "import/no-named-as-default-member": "off",
-        "import/order": [
+        "import-x/no-duplicates": "error",
+        "import-x/first": "error",
+        "import-x/named": "off",
+        "import-x/export": "off",
+        "import-x/no-unresolved": "off",
+        "import-x/namespace": "off",
+        "import-x/default": "off",
+        "import-x/no-named-as-default": "off",
+        "import-x/no-named-as-default-member": "off",
+        "import-x/order": [
           "warn",
           {
             alphabetize: {
