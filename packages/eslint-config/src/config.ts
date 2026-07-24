@@ -176,6 +176,7 @@ export const nextJs = () => {
         ...pluginNext.configs["core-web-vitals"].rules,
         "@next/next/no-duplicate-head": "off",
         "@next/next/no-img-element": "off",
+        "@next/next/next-script-for-ga": "off",
       },
     },
   ] as Linter.Config[];
