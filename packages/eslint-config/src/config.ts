@@ -107,7 +107,7 @@ export const typescript = (): Linter.Config[] =>
       },
     },
     {
-      files: ["**/*.{mjs,js}"],
+      files: ["**/*.{cjs,mjs,js}"],
       ...(tseslint.configs.disableTypeChecked as Linter.Config),
     },
   ] satisfies Linter.Config[];
