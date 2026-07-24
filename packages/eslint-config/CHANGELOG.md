@@ -1,5 +1,11 @@
 # @pixiv/eslint-config
 
+## 2.0.0
+
+### Major Changes
+
+- update to eslint v10
+
 ## 1.4.1
 
 ### Patch Changes
