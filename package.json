@@ -26,6 +26,6 @@
     "vitest": "4.1.10"
   },
   "resolutions": {
-    "eslint": "10.7.0"
+    "eslint": "10.8.0"
   }
 }
